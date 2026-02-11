@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fighter - Dev Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: url("galaxy.png") center center / cover no-repeat fixed;
+  color: white;
+  overflow-x: hidden;
+}
+
+ body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+   
+    a { color: inherit; text-decoration: none; }
+
+    .aurora-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, #1a0b2e, #0b0c1a 70%);
+      background-size: 200% 200%;
+      animation: aurora 25s ease-in-out infinite;
+      z-index: -2;
+    }
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: overlay;
+      opacity: 0.1;
+    }
+    @keyframes aurora {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .glitch-text {
+      position: relative;
+      animation: glitch 2s infinite;
+      text-shadow: 1px 0 red, 0 1px red, -1px 0 red, 0 -1px red;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(1px, -1px); }
+      60% { transform: translate(-1px, -1px); }
+      80% { transform: translate(1px, 1px); }
+      100% { transform: translate(0); }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #444;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+    nav a {
+      margin-left: 1rem;
+      font-weight: bold;
+      color: #bbb;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+    .hero img {
+      width: 180px;
+      border-radius: 999px;
+      border: 3px solid #ff9edb;
+      animation: pulse 2s infinite;
+      height: 180px;
+      box-shadow: 0 0 25px rgba(255, 158, 219, 0.6);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      margin-top: 18px;backdrop-filter: blur(2px);
+
+    }
+
+    .hero img:hover{
+      transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: auto;
+    }
+    .icons i {
+      font-size: 2rem;
+      margin: 0.5rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #666;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-radius: 10px;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #444;
+    }
+
+    .toggle {
+      cursor: pointer;
+      border: 1px solid #666;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: none;
+      color: inherit;
+      margin-left: 1rem;
+    }
+
+    .snow {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 9999;
+    }
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="aurora-bg"></div>
+  <div class="scanlines"></div>
+  <div class="snow"></div>
+
+  <header>
+    <h1 class="glitch-text">Fighter</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 class="glitch-text">Welcome to my world</h2>
+    <p>Student | Backend & Automation Enthusiast🏴‍☠️</p>
+    <img src="photo_2026-02-11_00-45-42.jpg" alt="profile" />
+  </section>
+
+  <section id="about">
+    <h3>👨‍💻 About Me</h3>
+    <p>I’m a student on ajourney to become a skilled developer. Exploring backend systems,automation, and practical software development</p>
+    <p>Telegram & GitHub: <a href="https://t.me/jdnlo" target="_blank">@jdnlo</a> & <a href="https://github.com/fighter-dev" target="_blank">github.com/fighter-dev</a></p>
+  </section>
+
+  <section id="skills">
+    <h3>🛠 Languages & Tools</h3>
+    <div class="icons">
+      <i class="fab fa-python" title="Python"></i>
+      <i class="fab fa-js" title="JavaScript"></i>
+      <i class="fab fa-linux" title="Linux"></i>
+      <i class="fas fa-terminal" title="CLI tools"></i>
+      <i class="fab fa-github" title="GitHub"></i>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>📂 My Projects</h3>
+    <div id="project-list"></div>
+    <div class="card">
+      <h4>🏗️Projects in Progress</h4>
+      <p>Currently building my first development projects.Stay Tuned</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>📬 Contact Me</h3>
+       <p>Telegram: <a href="https://t.me/jdnlo" target="_blank">Fighter</a></p>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Fighter | © 2026</p>
+  </footer>
+
+  <script>
+
+    function createSnowflake() {
+      const snow = document.querySelector('.snow');
+      const flake = document.createElement('div');
+      flake.className = 'snowflake';
+      flake.innerHTML = '❄️';
+      flake.style.left = Math.random() * window.innerWidth + 'px';
+      flake.style.animationDuration = 3 + Math.random() * 3 + 's';
+      flake.style.opacity = Math.random();
+      flake.style.fontSize = Math.random() * 20 + 10 + 'px';
+      snow.appendChild(flake);
+      setTimeout(() => snow.removeChild(flake), 8000);
+    }
+    setInterval(createSnowflake, 200);
+
+    
+    loadProjects();
+  </script>
+</body>
+    </html>
